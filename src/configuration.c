@@ -1,4 +1,5 @@
 #include <stdlib.h>
+
 #include "../include/configuration.h"
 
 void clear_screen() {

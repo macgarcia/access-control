@@ -53,6 +53,18 @@ static void create_note() {
     save_note(note);
 }
 
+static void search() {
+    char key[MAX_LENGTH];
+
+    clear_buffer_keyboard();
+    printf("Input key to search any note: ");
+    fgets(key, MAX_LENGTH, stdin);
+
+    remove_break_line(key);
+    printf("\n");
+    find_by_filter(key);
+}
+
 void process_user_choice(int choice) {
     find_all();
     switch(choice) {
@@ -65,13 +77,14 @@ void process_user_choice(int choice) {
             break;
         case 2:
             clear_screen();
-            printf("Create new note...\n");
+            printf("Create new note...\n\n");
             create_note();
             pause_screen();
             break;
         case 3:
             clear_screen();
-            printf("Search some note needs implements...\n");
+            printf("Search some note...\n\n");
+            search();
             pause_screen();
             break;
         case 4:
@@ -79,7 +92,7 @@ void process_user_choice(int choice) {
             break;
         default:
             clear_screen();
-            printf("Invalid selection...try again\n");
+            printf("Invalid selection...try again\n\n");
             pause_screen();
             break;
     }

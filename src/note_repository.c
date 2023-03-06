@@ -16,7 +16,7 @@ void save_note(Note note) {
 
 void find_all() {
     char line[201];
-    set_size_list(0);
+    set_size_list();
     FILE * file = get_txt_reading();
     while(fgets(line, 200, file) != NULL) {
         Note n = to_note_by_buffer_line(line);

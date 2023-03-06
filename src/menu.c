@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "../include/menu.h"
+#include "../include/configuration.h"
 
 int generic_menu(char* options[], int options_number) {
     int index = 0;
@@ -16,6 +17,30 @@ int generic_menu(char* options[], int options_number) {
 }
 
 void process_user_choice(int choice) {
-    printf("%d\n\n", choice);
+    switch(choice) {
+        case 1:
+            clear_screen();
+            printf("List all needs implements...\n");
+            pause_screen();
+            break;
+        case 2:
+            clear_screen();
+            printf("Create new note needs implements...\n");
+            pause_screen();
+            break;
+        case 3:
+            clear_screen();
+            printf("Search some note needs implements...\n");
+            pause_screen();
+            break;
+        case 4:
+            exit(0);
+            break;
+        default:
+            clear_screen();
+            printf("Invalid selection...try again");
+            pause_screen();
+            break;
+    }
 }
 

@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "../include/configuration.h"
@@ -15,5 +16,11 @@ void pause_screen() {
         system("read -p \"Press any key to exit\" exit");
     #else
         system("pause");
+    #endif
+}
+
+void clear_buffer_keyboard() {
+    #ifdef _WIN32
+        fflush(stdin);
     #endif
 }

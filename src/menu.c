@@ -32,15 +32,15 @@ static void create_note() {
     char user[MAX_LENGTH];
     char pass[MAX_LENGTH];
 
-    fflush(stdin);
+    clear_buffer_keyboard();
     printf("Input title of new note: ");
     fgets(title, MAX_LENGTH, stdin);
 
-    fflush(stdin);
+    clear_buffer_keyboard();
     printf("Input user of new note: ");
     fgets(user, MAX_LENGTH, stdin);
 
-    fflush(stdin);
+    clear_buffer_keyboard();
     printf("Input title of new note: ");
     fgets(pass, MAX_LENGTH, stdin);
 

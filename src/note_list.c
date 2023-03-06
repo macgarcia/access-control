@@ -12,6 +12,10 @@ void add_list(Note n) {
     notes[size_of_list++] = n;
 }
 
+void set_size_list(int size_list) {
+    size_of_list = size_list;
+}
+
 int get_size_list() {
     return size_of_list;
 }

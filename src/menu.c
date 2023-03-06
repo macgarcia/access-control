@@ -15,10 +15,11 @@ int generic_menu(char* options[], int options_number) {
         printf("%s\n", options[index]);
         index++;
     }
-    int choice;
+    char choice[4];
     printf("\nSelect any option: ");
-    scanf("%d", &choice);
-    return choice;
+    fgets(choice, 4, stdin);
+    clear_buffer_keyboard();
+    return atoi(choice);
 }
 
 static void remove_break_line(char line[MAX_LENGTH]) {

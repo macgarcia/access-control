@@ -7,9 +7,10 @@
 #include "../include/note.h"
 
 #define DELIMITER "|"
+#define MAX_BUFFER 350
 
 char* to_txt(Note note) {
-    static char buffer[300];
+    static char buffer[MAX_BUFFER];
     snprintf(buffer, sizeof(buffer), "%d|%s|%s|%s\n", note.id, note.title, note.user, note.pass);
     return buffer;
 }

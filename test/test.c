@@ -5,6 +5,7 @@ int main(void) {
         system("./text_file_test");
     #else
         system("text_file_test.exe");
+	  system("pause");
     #endif
     return 0;
 }

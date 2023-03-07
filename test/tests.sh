@@ -15,3 +15,5 @@ gcc -o tests test-obj/test.o
 
 echo "Start tests"
 ./tests
+
+sh clear-tests.sh

@@ -30,6 +30,5 @@ int main(void) {
     RUN_TEST(test_get_txt_reading);
     RUN_TEST(test_get_txt_writing);
     RUN_TEST(test_close_txt);
-    system("pause");
     return UNITY_END();
 }

@@ -26,8 +26,8 @@ void find_all() {
 }
 
 //via chatGpt
-char *strlwr(char *str) {
-    char *p = str;
+char* strlwr(char *str) {
+    char* p = str;
     while (*p) {
         *p = tolower((unsigned char)*p);
         p++;

@@ -6,7 +6,26 @@ Here you can put all information such title, user and pass of serverals web site
 ```
 C
 Windows 11
+Linux
+Shell
 ```
+
+**Execute tests**
+
+Suit used
+https://github.com/ThrowTheSwitch/Unity
+
+*Linux*
+If you are on linux, just execute on terminal the archive of test.
+
+```shell
+sh tests.sh
+```
+
+*Windows*
+Just make double click on archive tests_windows.bat
+
+**It will execute all tests of system and on end clear all directories**
 
 **Fist scream of system.**
 ![This is first scream of app](./accets/001.png)

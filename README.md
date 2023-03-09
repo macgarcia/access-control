@@ -26,7 +26,7 @@ sh tests.sh
 
 *Windows*
 
-Just make double click on archive tests_windows.bat
+Just double click on executable `tests_windows.bat`, after of test has executed in double click on executable `clear-tests_windows.bat`
 
 **It will execute all tests of system and on end clear all directories**
 

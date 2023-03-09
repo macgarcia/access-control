@@ -9,13 +9,13 @@
 #define DELIMITER "|"
 #define MAX_BUFFER 350
 
-char* to_txt(Note note) {
+static char* to_txt(Note note) {
     static char buffer[MAX_BUFFER];
     snprintf(buffer, sizeof(buffer), "%d|%s|%s|%s\n", note.id, note.title, note.user, note.pass);
     return buffer;
 }
 
-void to_string(Note n) {
+static void to_string(Note n) {
     printf("ID: %d\n", n.id);
     printf("Title: %s\n", n.title);
     printf("User: %s\n", n.user);

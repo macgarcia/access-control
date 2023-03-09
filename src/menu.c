@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "../include/menu.h"
 #include "../include/configuration.h"
@@ -9,16 +10,40 @@
 #include "../include/note_behavior.h"
 #include "../include/note.h"
 
+#define FUNCTIONALITES 4
+
 int generic_menu(char* options[], int options_number) {
     int index = 0;
-    while(index < options_number) {
-        printf("%s\n", options[index]);
-        index++;
+    char choice[2];
+    int controller = 1;
+    int i;
+
+    while(controller) {
+        // Print menu
+        while(index < options_number) {
+            printf("%s\n", options[index]);
+            index++;
+        }
+        printf("\nSelect any option: ");
+        scanf("%s", choice);
+
+        //Verify if tho user input is a digit
+        for (i = 0; choice[i] != '\0'; i++) {
+            if (!isdigit(choice[i])) {
+                printf("\nInvalid input...\n\n");
+                pause_screen();
+                clear_screen();
+                index = 0;
+                break;
+            }
+        }
+
+        //If input is not null, but is a digit, break the loop
+        if (choice[i] == '\0') {
+            controller = 0;
+        }
     }
-    char choice[4];
-    printf("\nSelect any option: ");
-    fgets(choice, 4, stdin);
-    clear_buffer_keyboard();
+
     return atoi(choice);
 }
 
@@ -65,36 +90,41 @@ static void search() {
     find_by_filter(key);
 }
 
+static void list_all() {
+    clear_screen();
+    printf("List all notes...\n\n");
+    print_list();
+    printf("\nNumbers of notes: %d\n\n", get_size_list());
+    pause_screen();
+}
+
+static void create_new_note() {
+    clear_screen();
+    printf("Create new note...\n\n");
+    create_note();
+    pause_screen();
+}
+
+static void search_note() {
+    clear_screen();
+    printf("Search some note...\n\n");
+    search();
+    pause_screen();
+}
+
+static void finish_system() {
+    exit(0);
+}
+
 void process_user_choice(int choice) {
     find_all();
-    switch(choice) {
-        case 1:
-            clear_screen();
-            printf("List all notes...\n\n");
-            print_list();
-            printf("\nNumbers of notes: %d\n\n", get_size_list());
-            pause_screen();
-            break;
-        case 2:
-            clear_screen();
-            printf("Create new note...\n\n");
-            create_note();
-            pause_screen();
-            break;
-        case 3:
-            clear_screen();
-            printf("Search some note...\n\n");
-            search();
-            pause_screen();
-            break;
-        case 4:
-            exit(0);
-            break;
-        default:
-            clear_screen();
-            printf("Invalid selection...try again\n\n");
-            pause_screen();
-            break;
+    void (*cases[FUNCTIONALITES])() = {list_all, create_new_note, search_note, finish_system};
+    if (choice > FUNCTIONALITES) {
+        clear_screen();
+        printf("Invalid selection...try again\n\n");
+        pause_screen();
+    } else {
+        cases[choice - 1]();
     }
 }
 

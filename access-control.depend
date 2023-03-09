@@ -1,0 +1,93 @@
+# depslib dependency file v1.0
+1677872510 source:d:\tmp\access-controll\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1677873892 source:d:\tmp\access-controll\src\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/menu.h"
+
+1677874657 source:d:\tmp\access-controll\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/menu.h"
+	"../include/configuration.h"
+
+1677873874 d:\tmp\access-controll\include\menu.h
+
+1677874527 source:d:\tmp\access-controll\src\configuration.c
+	<stdlib.h>
+	"../include/configuration.h"
+
+1677874005 d:\tmp\access-controll\include\configuration.h
+
+1678110440 source:d:\repositorio\access-control\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/menu.h"
+	"../include/configuration.h"
+
+1677873874 d:\repositorio\access-control\include\menu.h
+
+1678119028 d:\repositorio\access-control\include\configuration.h
+
+1678301501 source:d:\repositorio\access-control\src\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"../include/menu.h"
+	"../include/configuration.h"
+	"../include/note_list.h"
+	"../include/note_repository.h"
+	"../include/note_behavior.h"
+	"../include/note.h"
+
+1678120874 source:d:\repositorio\access-control\src\configuration.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/configuration.h"
+
+1678085311 d:\repositorio\access-control\include\note.h
+
+1678071296 d:\repositorio\access-control\include\note_behavior.h
+	<string.h>
+	"note.h"
+
+1678251485 source:d:\repositorio\access-control\src\note_behavior.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"../include/note_behavior.h"
+	"../include/note.h"
+
+1678123841 d:\repositorio\access-control\include\note_list.h
+	"note.h"
+
+1678123834 source:d:\repositorio\access-control\src\note_list.c
+	<stdio.h>
+	"../include/note_list.h"
+	"../include/note.h"
+
+1678110811 source:d:\repositorio\access-control\src\text_file.c
+	<stdio.h>
+	"../include/text_file.h"
+
+1678159837 d:\repositorio\access-control\include\text_file.h
+	<stdio.h>
+
+1678109726 d:\repositorio\access-control\include\note_repository.h
+	"note.h"
+
+1678130280 source:d:\repositorio\access-control\src\note_repository.c
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"../include/note_repository.h"
+	"../include/text_file.h"
+	"../include/note_behavior.h"
+	"../include/note_list.h"
+	"../include/note.h"
+

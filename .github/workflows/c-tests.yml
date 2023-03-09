@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C tests
 
 on:
   push:
@@ -13,5 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Tests
+    - name: Tests Unity
       run: cd test; sh tests.sh

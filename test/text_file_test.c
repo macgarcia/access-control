@@ -26,6 +26,7 @@ void test_close_txt() {
 }
 
 int main(void) {
+    printf("Tests on text_file.\n\n");
     UNITY_BEGIN();
     RUN_TEST(test_get_txt_reading);
     RUN_TEST(test_get_txt_writing);

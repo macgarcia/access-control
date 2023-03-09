@@ -10,6 +10,15 @@ gcc -Wall -g -c unit/unity.c -o test-obj/unity.o
 
 gcc -o text_file_test test-obj/text_file.o test-obj/text_file_test.o test-obj/unity.o
 
+#=========
+
+gcc -Wall -g -c ../src/note_list.c -o test-obj/note_list.o
+gcc -Wall -g -c note_list_test.c -o test-obj/note_list_test.o
+
+gcc -o note_list_test test-obj/note_list.o test-obj/note_list_test.o test-obj/unity.o
+
+#==========
+
 gcc -Wall -g -c test.c -o test-obj/test.o
 gcc -o tests test-obj/test.o
 

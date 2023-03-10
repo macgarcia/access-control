@@ -63,6 +63,15 @@
 					<Add option="-g" />
 				</Compiler>
 			</Target>
+			<Target title="note_behavior_test">
+				<Option output="test/note_behavior_test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
@@ -82,11 +91,13 @@
 			<Option target="Release" />
 			<Option target="Run" />
 			<Option target="note_list_test" />
+			<Option target="note_behavior_test" />
 		</Unit>
 		<Unit filename="include/note_behavior.h">
 			<Option target="Debug" />
 			<Option target="Release" />
 			<Option target="Run" />
+			<Option target="note_behavior_test" />
 		</Unit>
 		<Unit filename="include/note_list.h">
 			<Option target="Debug" />
@@ -127,6 +138,7 @@
 			<Option target="Debug" />
 			<Option target="Release" />
 			<Option target="Run" />
+			<Option target="note_behavior_test" />
 		</Unit>
 		<Unit filename="src/note_list.c">
 			<Option compilerVar="CC" />
@@ -148,6 +160,10 @@
 			<Option target="Run" />
 			<Option target="Text_file_test" />
 		</Unit>
+		<Unit filename="test/note_behavior_test.c">
+			<Option compilerVar="CC" />
+			<Option target="note_behavior_test" />
+		</Unit>
 		<Unit filename="test/note_list_test.c">
 			<Option compilerVar="CC" />
 			<Option target="note_list_test" />
@@ -165,14 +181,17 @@
 			<Option compilerVar="CC" />
 			<Option target="Text_file_test" />
 			<Option target="note_list_test" />
+			<Option target="note_behavior_test" />
 		</Unit>
 		<Unit filename="test/unit/unity.h">
 			<Option target="Text_file_test" />
 			<Option target="note_list_test" />
+			<Option target="note_behavior_test" />
 		</Unit>
 		<Unit filename="test/unit/unity_internals.h">
 			<Option target="Text_file_test" />
 			<Option target="note_list_test" />
+			<Option target="note_behavior_test" />
 		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />

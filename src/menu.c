@@ -11,7 +11,7 @@
 #include "../include/note.h"
 
 #define FUNCTIONALITES 4
-#define ALTERNATIVES 2
+#define LIMIT 4
 
 static void remove_break_line(char line[MAX_LENGTH]) {
     if (line[strlen(line) - 1] == '\n') {
@@ -21,7 +21,7 @@ static void remove_break_line(char line[MAX_LENGTH]) {
 
 int generic_menu(char* options[], int options_number) {
     int index = 0;
-    char choice[ALTERNATIVES];
+    int choice;
     int controller = 1;
 
     while(controller) {
@@ -31,21 +31,21 @@ int generic_menu(char* options[], int options_number) {
             index++;
         }
 
-        printf("\nSelect any option: ");
-        fgets(choice, ALTERNATIVES, stdin);
         clear_buffer_keyboard();
+        printf("\nSelect any option: ");
 
-        if (!isdigit(choice[0])) {
+        if (scanf("%d", &choice) == 1 && choice <= LIMIT) {
+             controller = 0;
+        } else {
             printf("\nInvalid input...\n\n");
             pause_screen();
             clear_screen();
             index = 0;
-        } else {
-            controller = 0;
         }
+        getchar();
     }
 
-    return atoi(choice);
+    return choice;
 }
 
 static void create_note() {

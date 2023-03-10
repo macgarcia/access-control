@@ -7,9 +7,13 @@ void setUp(){};
 void tearDown(){};
 
 void new_note_test() {
-    Note n = new_note("title-test", "user-test", "pass-title");
+    char title[MAX_LENGTH] = "title-test";
+    char user[MAX_LENGTH] = "user-test";
+    char pass[MAX_LENGTH] = "pass-test";
+
+    Note n = new_note(title, user, pass);
     TEST_ASSERT(n.id > 0);
-    TEST_ASSERT(strcmp("title-test", n.title) == 0);
+    TEST_ASSERT(strcmp(title, n.title) == 0);
 }
 
 void to_note_by_buffer_line_test() {

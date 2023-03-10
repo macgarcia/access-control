@@ -47,15 +47,5 @@ void find_by_filter(char* filter) {
             notes[i].to_string(notes[i]);
         }
     }
-
-    /*
-    if (filter_lower != NULL) {
-        free(filter_lower);
-    }
-
-    if (tmp_title_lower != NULL) {
-        free(tmp_title_lower);
-    }
-    */
 }
 

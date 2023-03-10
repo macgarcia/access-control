@@ -11,12 +11,18 @@
 #include "../include/note.h"
 
 #define FUNCTIONALITES 4
+#define ALTERNATIVES 2
+
+static void remove_break_line(char line[MAX_LENGTH]) {
+    if (line[strlen(line) - 1] == '\n') {
+        line[strlen(line) - 1] = '\0';
+    }
+}
 
 int generic_menu(char* options[], int options_number) {
     int index = 0;
-    char choice[2];
+    char choice[ALTERNATIVES];
     int controller = 1;
-    int i;
 
     while(controller) {
         // Print menu
@@ -24,33 +30,22 @@ int generic_menu(char* options[], int options_number) {
             printf("%s\n", options[index]);
             index++;
         }
+
         printf("\nSelect any option: ");
-        scanf("%s", choice);
+        fgets(choice, ALTERNATIVES, stdin);
+        clear_buffer_keyboard();
 
-        //Verify if tho user input is a digit
-        for (i = 0; choice[i] != '\0'; i++) {
-            if (!isdigit(choice[i])) {
-                printf("\nInvalid input...\n\n");
-                pause_screen();
-                clear_screen();
-                index = 0;
-                break;
-            }
-        }
-
-        //If input is not null, but is a digit, break the loop
-        if (choice[i] == '\0') {
+        if (!isdigit(choice[0])) {
+            printf("\nInvalid input...\n\n");
+            pause_screen();
+            clear_screen();
+            index = 0;
+        } else {
             controller = 0;
         }
     }
 
     return atoi(choice);
-}
-
-static void remove_break_line(char line[MAX_LENGTH]) {
-    if (line[strlen(line) - 1] == '\n') {
-        line[strlen(line) - 1] = '\0';
-    }
 }
 
 static void create_note() {

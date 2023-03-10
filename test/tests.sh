@@ -19,6 +19,13 @@ gcc -o note_list_test test-obj/note_list.o test-obj/note_list_test.o test-obj/un
 
 #==========
 
+gcc -Wall -g -c ../src/note_behavior.c -o test-obj/note_behavior.o
+gcc -Wall -g -c note_behavior_test.c -o test-obj/note_behavior_test.o
+
+gcc -o note_behavior_test test-obj/note_behavior.o test-obj/note_behavior_test.o test-obj/unity.o
+
+#==========
+
 gcc -Wall -g -c test.c -o test-obj/test.o
 gcc -o tests test-obj/test.o
 

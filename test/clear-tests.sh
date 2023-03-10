@@ -5,3 +5,4 @@ rm -f .notes.txt
 rm -f tests
 rm -f text_file_test
 rm -f note_list_test
+rm -f note_behavior_test
